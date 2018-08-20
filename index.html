@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.min.js" charset="utf-8"></script>
+    <script src="classes.js" charset="utf-8"></script>
+    <script src="main.js" charset="utf-8"></script>
+    <title>Step Timer</title>
+    <link id=favicon rel="shortcut icon" href="Timer running.png" />
+  </head>
+  <body onload="pageStart()">
+    <!-- Steps -->
+    <table id="stepTable" class="font">
+      <tr>
+        <th> Step </th>
+        <th> Time </th>
+      </tr>
+    </table>
+
+    <!-- timer information -->
+    <table id="timerTable" class="font">
+      <tr>
+        <td>
+          <select id="timerSelect" size="1">
+            <option disabled=true>--------</option>
+            <option value="new">Add Timer</option>
+            <option value="del">Delete Current Timer</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Timer Name: <span id="tName"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Timer description:
+        </td>
+      </tr>
+      <tr>
+        <td id="tDesc">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Timer Length: <span id=tLength></span> Minutes
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input id="startStop" type="button" onclick="startTimer()" value="Start Timer">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Current Step: <span id=sName>None</span>
+        </td>
+      </tr>
+    </table>
+
+    <!-- New Timer Overlay -->
+    <div id=newTimer>
+      <div id="box">
+        <table id=newboxtable>
+          <tr>
+            <td>
+              <table>
+                <tr>
+                  <td><input type="text" id="newTimerName" placeholder="Timer Name" required=true></td>
+                </tr>
+                <tr>
+                  <td><textarea rows="3" cols="20" id="NewTimerDescription" maxlength="75" placeholder="A short description"></textarea></td>
+                </tr>
+              </table>
+              <p></p>
+              <table id=addSteps>
+                  <tr>
+                    <th><input type="text" id="newStepName" placeholder="Step Name" required=true></th>
+                  </tr>
+                  <tr>
+                    <th><input type="number" value="10" id="newStepMin" min="1"> Minutes</th>
+                  </tr>
+                  <tr>
+                    <th><input type="button" value="Add Step" onclick="addNewStep()"></th>
+                  </tr>
+              </table>
+            </td>
+          </tr>
+        <table>
+      <!-- Add timer  -->
+      <span id="close" onclick="$('#newTimer').fadeOut(500)">x</span>
+      <input type="button" id=addTimerButton value="Add timer" onclick="addNewTimer()">
+    </div>
+    </div>
+  </body>
+
+<script>
+$('#timerSelect').change(function() {
+  tid = $('#timerSelect').val()
+  console.log(tid)
+  if(tid == 'new'){$('#newTimer').fadeIn(500)}else if (tid == 'del') {
+    timers.splice(tid, 1)
+    $('option[value = "'+currentID+'"]').remove()
+    $('#timerSelect').val(timers.length-1)
+  }else{
+  currentID = tid
+}
+  updatePage(currentID)
+})
+</script>
+</html>
