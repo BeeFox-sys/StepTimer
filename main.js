@@ -104,8 +104,9 @@ function startTimer() {
       var options = {
         body: "Completed "+step.name+"!",
         timestamp: cMill+(currentMin),
-        image: "Timer Ended.png",
-        badge: "Timer Ended.png"
+        image: "Timer running.png",
+        badge: "Timer running.png",
+        icon: "Timer running.png"
       }
       if(index+1 < timers[currentID].steps.length){
         options.body += " Next step is "+timers[currentID].steps[index+1].name+" for "+timers[currentID].steps[index+1].minutes+" minutes!"
