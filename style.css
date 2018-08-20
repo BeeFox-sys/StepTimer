@@ -48,7 +48,7 @@
   min-width: 400;
   min-height: 175;
   width: 40%;
-  height: 25vw;
+  height: 47vh;
   position: relative;
   top: 33%;
   left: 30%;
@@ -112,17 +112,17 @@ textarea{
     font-size: 4vw;
 }
 .font input{
-  width: 40vw;
-  height: 4vw;
+  width: 40%;
+  height: 4%;
   font-size: 2vw;
 }
 .font select{
-  height: 4vw;
+  height: 4%;
   font-size: 2vw;
 }
 .font option{
-  height: 4vw;
-  width: 39vw;
+  height: 4%;
+  width: 39%;
   font-size: 2vw;
 }
 
@@ -149,7 +149,7 @@ textarea{
 }
 #steptimeinput input{
   position: relative;
-  width: 33vw
+  width: 33%
 }
 #stepbutton{
   position: relative;
@@ -171,6 +171,18 @@ textarea{
     width: 90vw;
   }
 
+  #box{
+    position: relative;
+    left: -15vw;
+    top: 25vh;
+    width: 100vw;
+    height: 50vh;
+  }
+
+  #addTimerButton{
+    right: 40%;
+  }
+
   #startStop{
     border: 1px solid #CCC;
     border-radius: 4px;
@@ -183,43 +195,6 @@ textarea{
     top: -4vw;
   }
 
-  #box{
-    background-color: #FFF;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    top: 0%;
-    left: 0%;
-    border: none;
-    border-radius: 0;
-  }
-
-  #addTimerButton{
-    position: relative;
-    top: 5vh;
-    bottom: auto;
-    right: auto;
-    left: 0;
-    width: 75%;
-    height: 8vh;
-  }
-
-  #box td{
-    width: 83vw;
-  }
-
-  #box table{
-    position: relative;
-    left: 2vw;
-    width: 90vw;
-  }
-
-  #close{
-    position: relative;
-    left: 85vw;
-    top: -35vh;
-  }
-
   #timerSelect{
     width: 92%;
     height: 5vh;
@@ -227,7 +202,7 @@ textarea{
   }
 }
 
-@media only screen and (max-width: 630px) {
+ @media only screen and (max-width: 630px) {{
   #stepTable{
     position: relative;
     left: 5;
@@ -241,6 +216,18 @@ textarea{
     width: 90vw;
   }
 
+  #box{
+    position: relative;
+    left: -15vw;
+    top: 25vh;
+    width: 100vw;
+    height: 50vh;
+  }
+
+  #addTimerButton{
+    right: 40%;
+  }
+
   #startStop{
     border: 1px solid #CCC;
     border-radius: 4px;
@@ -251,43 +238,6 @@ textarea{
     height: 8vh;
     position: relative;
     top: -4vw;
-  }
-
-  #box{
-    background-color: #FFF;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    top: 0%;
-    left: 0%;
-    border: none;
-    border-radius: 0;
-  }
-
-  #addTimerButton{
-    position: relative;
-    top: 5vh;
-    bottom: auto;
-    right: auto;
-    left: 0;
-    width: 75%;
-    height: 8vh;
-  }
-
-  #box td{
-    width: 83vw;
-  }
-
-  #box table{
-    position: relative;
-    left: 2vw;
-    width: 90vw;
-  }
-
-  #close{
-    position: relative;
-    left: 85vw;
-    top: -35vh;
   }
 
   #timerSelect{
