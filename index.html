@@ -101,17 +101,18 @@
   </body>
 
 <script>
-$('#timerSelect').change(function() {
+$('#timerSelect').change(function() { //if timer select changes
   tid = $('#timerSelect').val()
-  console.log(tid)
-  if(tid == 'new'){$('#newTimer').fadeIn(500)}else if (tid == 'del') {
-    timers.splice(tid, 1)
-    $('option[value = "'+currentID+'"]').remove()
-    $('#timerSelect').val(timers.length-1)
+  if(tid == 'new'){ //if new timer
+    $('#newTimer').fadeIn(500) //open new timer dialoge
+  }else if (tid == 'del') { //if delete timer
+    timers.splice(tid, 1) //remove timer from array
+    $('option[value = "'+currentID+'"]').remove() //remove timer from select options
+    $('#timerSelect').val(timers.length-1) // reset elect option
   }else{
-  currentID = tid
+  currentID = tid //set timer id
 }
-  updatePage(currentID)
+  updatePage(currentID) //update page
 })
 </script>
 </html>
